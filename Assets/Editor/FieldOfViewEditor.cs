@@ -23,5 +23,4 @@ public class FieldOfViewEditor : Editor
             Handles.DrawLine(fow.transform.position, visibleTarget.position);
         }
     }
-
 }
