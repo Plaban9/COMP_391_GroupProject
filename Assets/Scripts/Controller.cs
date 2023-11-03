@@ -93,4 +93,20 @@ public class Controller : MonoBehaviour
         _navMeshAgent.enabled = true;
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("LevelComplete"))
+        {
+            TextFade.Instance.ShowFade("Level Completed!!");
+        }
+        else if (other.transform.CompareTag("PowerUp"))
+        {
+            TextFade.Instance.ShowFade("Power Up Collected!!");
+        }
+        else if (other.transform.CompareTag("Chest"))
+        {
+            TextFade.Instance.ShowFade("Hidden Chest Collected");
+        }
+    }
 }

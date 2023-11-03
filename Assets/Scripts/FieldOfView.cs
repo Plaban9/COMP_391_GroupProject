@@ -34,7 +34,8 @@ public class FieldOfView : MonoBehaviour
     private void Start()
     {
         _viewMesh = new Mesh();
-        _viewMesh.name = "Line Of Sight";
+        if (transform.CompareTag("Player"))
+            _viewMesh.name = "Line Of Sight";
         _viewMeshFilter.mesh = _viewMesh;
 
         StartCoroutine(nameof(FindTargetsWithDelay), 0.2f);
@@ -107,22 +108,25 @@ public class FieldOfView : MonoBehaviour
             viewPoints.Add(newViewCast.endPoint);
 
             //View cast won't be set at i = 0
-            //if (i > 0)
-            //{
-            //    bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.lengthOfRay - newViewCast.lengthOfRay) > _edgeDistanceThreshold;
-            //    if (oldViewCast.hasHit != newViewCast.hasHit || (oldViewCast.hasHit && newViewCast.hasHit && edgeDstThresholdExceeded))
-            //    {
-            //        EdgeCastData edge = FindEdge(oldViewCast, newViewCast);
-            //        if (edge.pointA != Vector3.zero)
-            //        {
-            //            viewPoints.Add(edge.pointA);
-            //        }
-            //        if (edge.pointB != Vector3.zero)
-            //        {
-            //            viewPoints.Add(edge.pointB);
-            //        }
-            //    }
-            //}
+            if (i > 0)
+            {
+                bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.lengthOfRay - newViewCast.lengthOfRay) > _edgeDistanceThreshold;
+                if (oldViewCast.hasHit != newViewCast.hasHit || (oldViewCast.hasHit && newViewCast.hasHit && edgeDstThresholdExceeded))
+                {
+                    EdgeCastData edge = FindEdge(oldViewCast, newViewCast);
+                    if (edge.pointA != Vector3.zero)
+                    {
+                        viewPoints.Add(edge.pointA);
+                    }
+                    if (edge.pointB != Vector3.zero)
+                    {
+                        viewPoints.Add(edge.pointB);
+                    }
+                }
+            }
+
+            viewPoints.Add(newViewCast.endPoint);
+            oldViewCast = newViewCast;
         }
 
         int vertexCount = viewPoints.Count + 1;
