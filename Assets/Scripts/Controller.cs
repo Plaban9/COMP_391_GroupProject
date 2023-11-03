@@ -25,7 +25,17 @@ public class Controller : MonoBehaviour
     private LineRenderer _lineRenderer;
 
     [SerializeField]
-    private SpriteRenderer _spriteRenderer; 
+    private SpriteRenderer _spriteRenderer;
+
+    [SerializeField]
+    private static Controller _controller;
+
+
+    public static Controller GetPlayer()
+    {
+        return _controller;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +46,8 @@ public class Controller : MonoBehaviour
         _navMeshAgent.speed = _movementSpeed;
         _lineRenderer = GetComponent<LineRenderer>();
         _spriteRenderer.gameObject.SetActive(false);
+
+        _controller = this;
     }
 
     // Update is called once per frame

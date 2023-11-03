@@ -106,13 +106,13 @@ public class FieldOfView : MonoBehaviour
             ViewCastData newViewCast = ViewCast(angle);
             viewPoints.Add(newViewCast.endPoint);
 
-            // View cast won't be set at i = 0
+            //View cast won't be set at i = 0
             //if (i > 0)
             //{
-            //    bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst - newViewCast.dst) > edgeDstThreshold;
-            //    if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDstThresholdExceeded))
+            //    bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.lengthOfRay - newViewCast.lengthOfRay) > _edgeDistanceThreshold;
+            //    if (oldViewCast.hasHit != newViewCast.hasHit || (oldViewCast.hasHit && newViewCast.hasHit && edgeDstThresholdExceeded))
             //    {
-            //        EdgeInfo edge = FindEdge(oldViewCast, newViewCast);
+            //        EdgeCastData edge = FindEdge(oldViewCast, newViewCast);
             //        if (edge.pointA != Vector3.zero)
             //        {
             //            viewPoints.Add(edge.pointA);
@@ -122,7 +122,6 @@ public class FieldOfView : MonoBehaviour
             //            viewPoints.Add(edge.pointB);
             //        }
             //    }
-
             //}
         }
 

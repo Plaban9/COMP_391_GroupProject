@@ -371,6 +371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4616155025344798316, guid: 243047a834fc61743826901d1caf1abe,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616155025344798316, guid: 243047a834fc61743826901d1caf1abe,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -628,6 +633,12 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!23 &1066174760 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3414528343017474662, guid: 9cf58cc20e3173548b623bba0238f7d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1263316884}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1248845752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,6 +712,109 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179ac78b7ca697243ba26d44e812005c, type: 3}
+--- !u!1001 &1263316884
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 340527160269090893, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: _radius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 340527160269090893, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: _fovRenderer
+      value: 
+      objectReference: {fileID: 1066174760}
+    - target: {fileID: 340527160269090893, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: _giveUpChaseRadius
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 340527160269090893, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: _waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1372346036}
+    - target: {fileID: 340527160269090893, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: _waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1884116228}
+    - target: {fileID: 340527160269090893, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: _waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 825919217}
+    - target: {fileID: 3558911480287167434, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355019185199553377, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178685543815726943, guid: 9cf58cc20e3173548b623bba0238f7d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9cf58cc20e3173548b623bba0238f7d5, type: 3}
 --- !u!1 &1372346035
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,11 +954,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f9d33586988f9349a652ca32ba79ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waypoints:
-  - {fileID: 1372346036}
-  - {fileID: 1884116228}
-  - {fileID: 825919217}
-  _distanceThreshold: 0.5
+  _waypoints: []
+  _distanceThreshold: 0
+  _radius: 0
+  _giveUpChaseRadius: 0
+  _fieldOfView: {fileID: 0}
+  _fovRenderer: {fileID: 0}
 --- !u!1 &1557435505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,3 +1467,4 @@ SceneRoots:
   - {fileID: 468119799}
   - {fileID: 52737690}
   - {fileID: 1557435506}
+  - {fileID: 1263316884}
