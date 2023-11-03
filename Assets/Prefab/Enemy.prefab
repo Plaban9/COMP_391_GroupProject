@@ -153,6 +153,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _distanceThreshold: 0.5
+  _radius: 4
+  _giveUpChaseRadius: 8
+  _fieldOfView: {fileID: 0}
+  _fovRenderer: {fileID: 3414528343017474662}
 --- !u!195 &3558911480287167434
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -163,7 +167,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 4
   m_Acceleration: 999
   avoidancePriority: 50
   m_AngularSpeed: 999
@@ -186,7 +190,7 @@ GameObject:
   - component: {fileID: 1532797751740189662}
   - component: {fileID: 3405317382823330875}
   - component: {fileID: 3414528343017474662}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: ViewVisualization
   m_TagString: Untagged
   m_Icon: {fileID: 0}

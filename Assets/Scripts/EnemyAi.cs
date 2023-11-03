@@ -46,7 +46,7 @@ public class EnemyAi : MonoBehaviour
 
         _fieldOfView = GetComponent<FieldOfView>();
 
-        _fovRenderer.material = Instantiate(Resources.Load("Target") as Material);
+        _fovRenderer.material = Instantiate(Resources.Load("ViewVisualizationEnemy") as Material);
     }
 
     private void UpdateDestination()
@@ -74,7 +74,7 @@ public class EnemyAi : MonoBehaviour
     {
         switch (state)
         {
-            default:
+
             case State.Patrol:
                 if (_fovRenderer != null)
                     _fovRenderer.material.color = Color.green;
@@ -86,25 +86,28 @@ public class EnemyAi : MonoBehaviour
                 FindPlayer();
                 break;
             case State.Chase:
-                _navMeshAgent.SetDestination(Controller.GetPlayer().transform.position);
-
-                if (Vector3.Distance(transform.position, _target) > _giveUpChaseRadius)
-                {
-                    state = State.GoingBackToPatrol;
-                }
-
                 if (_fovRenderer != null)
                     _fovRenderer.material.color = Color.red;
+                _navMeshAgent.SetDestination(Controller.GetPlayer().transform.position);
+
+                if (Vector3.Distance(transform.position, Controller.GetPlayer().transform.position) > _giveUpChaseRadius)
+                {
+                    state = State.GoingBackToPatrol;
+                    _navMeshAgent.SetDestination(_target);
+                }
+
                 break;
             case State.GoingBackToPatrol:
                 if (_fovRenderer != null)
                     _fovRenderer.material.color = Color.yellow;
 
-                UpdateDestination();
-                if (Vector3.Distance(transform.position, _target) <= _distanceThreshold * 2)
+                if (Vector3.Distance(transform.position, _target) <= _distanceThreshold)
                 {
                     state = State.Patrol;
                 }
+                FindPlayer();
+                break;
+            default:
                 break;
         }
 

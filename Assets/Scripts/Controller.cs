@@ -62,8 +62,7 @@ public class Controller : MonoBehaviour
             {
                 _navMeshAgent.SetDestination(hit.point);
                 _spriteRenderer.gameObject.SetActive(true);
-                _spriteRenderer.transform.position = hit.point;
-
+                _spriteRenderer.transform.position = new Vector3(hit.point.x, hit.point.y + 0.1f, hit.point.z);
             }
         }
 
@@ -84,5 +83,14 @@ public class Controller : MonoBehaviour
     {
         _lineRenderer.positionCount = _navMeshAgent.path.corners.Length;
         _lineRenderer.SetPositions(_navMeshAgent.path.corners);
+    }
+
+    public void OnTeleport(Vector3 position)
+    {
+        _spriteRenderer.gameObject.SetActive(false);
+        _navMeshAgent.enabled = false;
+        this.transform.position = position;
+        _navMeshAgent.enabled = true;
+
     }
 }
