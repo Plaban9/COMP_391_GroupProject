@@ -6,15 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
 {
-    private enum State
-    {
-        Patrol,
-        Chase,
-        GoingBackToPatrol
-    }
-
-
-    private State state;
+    private EnemyState state;
     private Vector3 _startingPosition;
     private NavMeshAgent _navMeshAgent;
 
@@ -42,7 +34,7 @@ public class EnemyAi : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _waypointIndex = 0;
         UpdateDestination();
-        state = State.Patrol;
+        state = EnemyState.Patrol;
 
         _fieldOfView = GetComponent<FieldOfView>();
 
@@ -75,7 +67,7 @@ public class EnemyAi : MonoBehaviour
         switch (state)
         {
 
-            case State.Patrol:
+            case EnemyState.Patrol:
                 if (_fovRenderer != null)
                     _fovRenderer.material.color = Color.green;
                 if (Vector3.Distance(transform.position, _target) <= _distanceThreshold)
@@ -85,28 +77,28 @@ public class EnemyAi : MonoBehaviour
                 }
                 FindPlayer();
                 break;
-            case State.Chase:
+            case EnemyState.Chase:
                 if (_fovRenderer != null)
                     _fovRenderer.material.color = Color.red;
                 _navMeshAgent.SetDestination(Controller.GetPlayer().transform.position);
 
                 if (Vector3.Distance(transform.position, Controller.GetPlayer().transform.position) > _giveUpChaseRadius)
                 {
-                    state = State.GoingBackToPatrol;
+                    state = EnemyState.Patrol;
                     _navMeshAgent.SetDestination(_target);
                 }
 
                 break;
-            case State.GoingBackToPatrol:
-                if (_fovRenderer != null)
-                    _fovRenderer.material.color = Color.yellow;
+            //case EnemyState.GoingBackToPatrol:
+            //    if (_fovRenderer != null)
+            //        _fovRenderer.material.color = Color.yellow;
 
-                if (Vector3.Distance(transform.position, _target) <= _distanceThreshold)
-                {
-                    state = State.Patrol;
-                }
-                FindPlayer();
-                break;
+            //    if (Vector3.Distance(transform.position, _target) <= _distanceThreshold)
+            //    {
+            //        state = EnemyState.Patrol;
+            //    }
+            //    FindPlayer();
+            //    break;
             default:
                 break;
         }
@@ -117,7 +109,7 @@ public class EnemyAi : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Controller.GetPlayer().transform.position) < _radius && _fieldOfView.GetVisibleTargets().Count > 0)
         {
-            state = State.Chase;
+            state = EnemyState.Chase;
         }
     }
 
