@@ -8,6 +8,7 @@ TagManager:
   - Chest
   - PowerUp
   - LevelComplete
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -19,10 +20,10 @@ TagManager:
   - Targets
   - Player
   - Environment
-  - 
-  - 
-  - 
-  - 
+  - PowerUps
+  - Chest
+  - Floor
+  - Decoration
   - 
   - 
   - 

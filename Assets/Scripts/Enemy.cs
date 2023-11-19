@@ -195,6 +195,8 @@ namespace Entity
             {
                 _enemyState = EnemyState.Chase;
 
+                ScoreManagers.Instance.IncrementTimesDetected();
+
                 if (OnGuardHasSpottedPlayer != null)
                 {
 
@@ -206,7 +208,7 @@ namespace Entity
 
         private bool CanSeePlayer()
         {
-            if (Vector3.Distance(transform.position, _player.position) < _viewDistance)
+            if (Vector3.Distance(transform.position, _player.position) < _viewDistance && !Controller.IsInvisible)
             {
                 Vector3 directionToPlayer = (_player.position - transform.position).normalized;
 
@@ -404,7 +406,7 @@ namespace Entity
             _lastShot = _fireRate;
 
             GameObject bullet = Instantiate(_bullet, _firePosition.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750);
 
             //Destroy(_bullet, 1f);
         }
