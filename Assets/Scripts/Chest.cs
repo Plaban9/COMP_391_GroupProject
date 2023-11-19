@@ -12,17 +12,20 @@ public class Chest : MonoBehaviour
     [SerializeField]
     private GameObject _particleEffect;
 
+    public bool IsOpen { get => isOpen; set => isOpen = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
-        isOpen = false;
+        IsOpen = false;
     }
 
     public void OpenTreasureBox()
     {
-        if (!isOpen)
+        if (!IsOpen)
         {
+            isOpen = true;
             _animator.SetTrigger("open");
             TextFade.Instance.ShowFade("Hidden Chest Collected");
             _particleEffect.SetActive(false);

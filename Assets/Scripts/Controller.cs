@@ -181,6 +181,8 @@ public class Controller : MonoBehaviour
         {
             ScoreManagers.Instance.SetHealthRemaining((int)_currentHealth);
             TextFade.Instance.ShowFade("Level Completed!!");
+            _navMeshAgent.enabled = false;
+            SceneManager.Instance.LoadScene("GameSuccess");
         }
         else if (other.transform.CompareTag("PowerUp"))
         {
@@ -242,8 +244,14 @@ public class Controller : MonoBehaviour
         {
             try
             {
-                ScoreManagers.Instance.IncrementChestTaken();
-                collision.transform.GetComponent<Chest>().OpenTreasureBox(); ;
+                Chest chest = collision.transform.GetComponent<Chest>();
+
+                if (!chest.IsOpen)
+                {
+                    ScoreManagers.Instance.IncrementChestTaken();
+                    chest.OpenTreasureBox();
+                }
+
             }
             catch
             {
@@ -278,6 +286,14 @@ public class Controller : MonoBehaviour
         {
             _hasDied = true;
             _animator.SetTrigger("die");
+            StartCoroutine(LevelOver(3f));
         }
+    }
+
+    private IEnumerator LevelOver(float duration)
+    {
+        TextFade.Instance.ShowFade("You Died!!");
+        yield return new WaitForSeconds(duration);
+        SceneManager.Instance.LoadScene("GameOver");
     }
 }
