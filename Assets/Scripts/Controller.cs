@@ -81,6 +81,24 @@ public class Controller : MonoBehaviour
         return _controller;
     }
 
+    [SerializeField]
+    private AudioClip[] _hurtSounds;
+
+    [SerializeField]
+    private AudioClip[] _deathSounds;
+
+    [SerializeField]
+    private AudioClip _coinCollected;
+
+    [SerializeField]
+    private AudioClip _powerUpCollected;
+
+    [SerializeField]
+    private AudioClip _levelFailed;
+
+    [SerializeField]
+    private AudioClip _levelCleared;
+
 
     // Start is called before the first frame update
     void Start()
@@ -182,6 +200,7 @@ public class Controller : MonoBehaviour
             ScoreManagers.Instance.SetHealthRemaining((int)_currentHealth);
             TextFade.Instance.ShowFade("Level Completed!!");
             _navMeshAgent.enabled = false;
+            AudioSource.PlayClipAtPoint(_levelCleared, transform.position, 1f);
             SceneManager.Instance.LoadScene("GameSuccess");
         }
         else if (other.transform.CompareTag("PowerUp"))
@@ -204,6 +223,8 @@ public class Controller : MonoBehaviour
                         ScoreManagers.Instance.IncrementPowerUpCollected();
                         break;
                 }
+
+                AudioSource.PlayClipAtPoint(_powerUpCollected, transform.position, 1f);
 
                 Destroy(other.gameObject);
             }
@@ -248,6 +269,7 @@ public class Controller : MonoBehaviour
 
                 if (!chest.IsOpen)
                 {
+                    AudioSource.PlayClipAtPoint(_coinCollected, transform.position, 1f);
                     ScoreManagers.Instance.IncrementChestTaken();
                     chest.OpenTreasureBox();
                 }
@@ -269,6 +291,8 @@ public class Controller : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(1f, 0.1f);
         _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
 
+        AudioSource.PlayClipAtPoint(_hurtSounds[UnityEngine.Random.Range(0, _hurtSounds.Length)], transform.position, 1f);
+
         if (_volume != null)
         {
             if (_currentHealth < 30f)
@@ -286,12 +310,14 @@ public class Controller : MonoBehaviour
         {
             _hasDied = true;
             _animator.SetTrigger("die");
+            AudioSource.PlayClipAtPoint(_deathSounds[UnityEngine.Random.Range(0, _deathSounds.Length)], transform.position, 1f);
             StartCoroutine(LevelOver(3f));
         }
     }
 
     private IEnumerator LevelOver(float duration)
     {
+        AudioSource.PlayClipAtPoint(_levelFailed, transform.position, 1f);
         TextFade.Instance.ShowFade("You Died!!");
         yield return new WaitForSeconds(duration);
         SceneManager.Instance.LoadScene("GameOver");

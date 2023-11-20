@@ -108,6 +108,12 @@ namespace Entity
 
         private float _lastShot;
 
+        [SerializeField]
+        private AudioClip[] _attackClips;
+
+        [SerializeField]
+        private AudioClip[] _howlClips;
+
 
 
         private void Awake()
@@ -196,11 +202,12 @@ namespace Entity
                 _enemyState = EnemyState.Chase;
 
                 ScoreManagers.Instance.IncrementTimesDetected();
+                AudioSource.PlayClipAtPoint(_howlClips[UnityEngine.Random.Range(0, _howlClips.Length)], transform.position, 1f);
 
                 if (OnGuardHasSpottedPlayer != null)
                 {
 
-                    // TODO: Howl
+                    // TODO: 
                     OnGuardHasSpottedPlayer();
                 }
             }
@@ -405,6 +412,7 @@ namespace Entity
 
             _lastShot = _fireRate;
 
+            AudioSource.PlayClipAtPoint(_attackClips[UnityEngine.Random.Range(0, _attackClips.Length)], transform.position, 1f);
             GameObject bullet = Instantiate(_bullet, _firePosition.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().AddForce(transform.forward * 750);
 
