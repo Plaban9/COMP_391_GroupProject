@@ -13590,7 +13590,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.51
-  MinDistance: 3.16
+  MinDistance: 1
   MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
@@ -17056,7 +17056,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.75
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -24087,6 +24087,21 @@ PrefabInstance:
     - target: {fileID: 2103219087872288295, guid: b6abc27a76b5a664fbd563396102c64c,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.key1.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103219087872288295, guid: b6abc27a76b5a664fbd563396102c64c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.7609129
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103219087872288295, guid: b6abc27a76b5a664fbd563396102c64c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103219087872288295, guid: b6abc27a76b5a664fbd563396102c64c,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3220588116251769457, guid: b6abc27a76b5a664fbd563396102c64c,
@@ -24177,7 +24192,7 @@ PrefabInstance:
     - target: {fileID: 7618858900297854836, guid: b6abc27a76b5a664fbd563396102c64c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7618858900297854836, guid: b6abc27a76b5a664fbd563396102c64c,
         type: 3}
@@ -32856,6 +32871,11 @@ PrefabInstance:
       propertyPath: _teleportTo
       value: 
       objectReference: {fileID: 1817993057}
+    - target: {fileID: 5480866288759816640, guid: c718f0d0f20599c4b92b4c7004ebf5ad,
+        type: 3}
+      propertyPath: _teleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 376347bde5dc89b4a8f8951a9675420b, type: 3}
     - target: {fileID: 5668475530775053802, guid: c718f0d0f20599c4b92b4c7004ebf5ad,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime1
@@ -33938,6 +33958,11 @@ PrefabInstance:
       propertyPath: _teleportTo
       value: 
       objectReference: {fileID: 2043147827}
+    - target: {fileID: 5480866288759816640, guid: c718f0d0f20599c4b92b4c7004ebf5ad,
+        type: 3}
+      propertyPath: _teleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 376347bde5dc89b4a8f8951a9675420b, type: 3}
     - target: {fileID: 5668475530775053802, guid: c718f0d0f20599c4b92b4c7004ebf5ad,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime1
@@ -36607,7 +36632,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 0.46
-  MinDistance: 1.91
+  MinDistance: 1
   MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
@@ -42758,6 +42783,11 @@ PrefabInstance:
       propertyPath: _teleportTo
       value: 
       objectReference: {fileID: 1196731606}
+    - target: {fileID: 5480866288759816640, guid: c718f0d0f20599c4b92b4c7004ebf5ad,
+        type: 3}
+      propertyPath: _teleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 376347bde5dc89b4a8f8951a9675420b, type: 3}
     - target: {fileID: 5668475530775053802, guid: c718f0d0f20599c4b92b4c7004ebf5ad,
         type: 3}
       propertyPath: InitialModule.startColor.maxGradient.ctime1
@@ -45158,7 +45188,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.9
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -46536,7 +46566,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.8
       inSlope: 0
       outSlope: 0
       tangentMode: 0

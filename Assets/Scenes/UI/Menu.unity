@@ -254,7 +254,7 @@ VideoPlayer:
   m_GameObject: {fileID: 440282375}
   m_Enabled: 1
   m_VideoClip: {fileID: 32900000, guid: 30467ca4ca5179840bc3abfe4604a9ca, type: 3}
-  m_TargetCameraAlpha: 0.175
+  m_TargetCameraAlpha: 0.25
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1804118250}
   m_TargetTexture: {fileID: 0}
@@ -266,14 +266,14 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 0
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -449,7 +449,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -550,10 +550,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fe1e5b58593847541a736256ac688c9c, type: 3}
   - {fileID: 8300000, guid: 15b2c1bdb5ca5d24888bfc473caec66a, type: 3}
   - {fileID: 8300000, guid: c975ce9eea53f6645b60def0a7a7595c, type: 3}
-  - {fileID: 8300000, guid: c975ce9eea53f6645b60def0a7a7595c, type: 3}
+  - {fileID: 8300000, guid: 49e9e366ef58dd94b8571198e3d5575d, type: 3}
   - {fileID: 8300000, guid: 69ff447264941674ab641200fbd63f7c, type: 3}
+  - {fileID: 8300000, guid: ee0177155461fa749af5526eda9fae04, type: 3}
+  - {fileID: 8300000, guid: 8663409c3355aec4291c506d247e7408, type: 3}
+  - {fileID: 8300000, guid: 49d09739dbb161549a83d6ad0bd6d1c0, type: 3}
   _audioSource: {fileID: 1055603603}
-  _maxVolume: 0.3
+  _maxVolume: 0.25
 --- !u!1 &1063909421
 GameObject:
   m_ObjectHideFlags: 0

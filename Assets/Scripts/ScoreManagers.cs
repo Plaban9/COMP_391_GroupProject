@@ -78,7 +78,7 @@ public class ScoreManagers : MonoBehaviour
         Debug.Log("OnSceneLoaded: " + scene.name);
         Debug.Log(mode);
 
-        if (scene.name.Equals("Start"))
+        if (scene.name.Equals("Menu"))
         {
             ResetData();
         }
