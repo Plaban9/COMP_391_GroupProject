@@ -288,7 +288,7 @@ public class Controller : MonoBehaviour
         _currentHealth = Mathf.Max(0, _currentHealth);
         StartCoroutine(PerformHit(3f));
 
-        CinemachineShake.Instance.ShakeCamera(1f, 0.1f);
+        CinemachineShake.Instance.ShakeCamera(2f, 0.5f);
         _healthBar.UpdateHealthBar(_maxHealth, _currentHealth);
 
         AudioSource.PlayClipAtPoint(_hurtSounds[UnityEngine.Random.Range(0, _hurtSounds.Length)], transform.position, 1f);
