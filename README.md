@@ -1,4 +1,4 @@
-<p><strong>Death to Deathless:</strong><br>A prototype of a concept made for a course (Intro to&nbsp; Game Simulation) at Centennial College.<br><br>Itch.io -&nbsp;<a href="[https://github.com/Plaban9/COMP_391_GroupProject](https://plaban.itch.io/death-to-deathless)">Plaban9/COMP_391_GroupProject: Group Project for COMP391</a>&nbsp;</p>
+<p><strong>Death to Deathless:</strong><br>A prototype of a concept made for a course (Intro to&nbsp; Game Simulation) at Centennial College.<br><br>Itch.io -&nbsp;<a href="[[https://github.com/Plaban9/COMP_391_GroupProject](https://plaban.itch.io/death-to-deathless)](https://plaban.itch.io/death-to-deathless)">Plaban9/COMP_391_GroupProject: Group Project for COMP391</a>&nbsp;</p>
 <p><br></p>
 <h3>Credits:<br>Sound/Music:</h3>
 <table border="1" width="100%" id="Table2" class="table table-bordered table-hover table-condensed">
